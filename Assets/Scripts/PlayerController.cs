@@ -20,8 +20,30 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            
+            MoveLeft();
         }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            MoveRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            Idle();
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            Idle();
+        }
+        Move();
+        Dead();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
